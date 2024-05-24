@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:printing/printing.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
+import 'package:resume_builder_app/Screens/skills/skills_screen.dart';
+import 'package:resume_builder_app/Screens/work_history/workHistory.dart';
 import 'package:resume_builder_app/utils/global.dart';
 import 'dart:typed_data';
 
@@ -64,18 +66,24 @@ Future<Uint8List> generatePdf() {
                   pw.SizedBox(
                     height: 30,
                   ),
-                  pw.Text('Personal Information'),
+                  pw.Text(
+                    'Personal Information',
+                    style: const pw.TextStyle(
+                      color: PdfColor.fromInt(0xff012D6C),
+                      fontSize: 30,
+                    ),
+                  ),
                   pw.Divider(
                     thickness: 2,
                     endIndent: 2,
                     indent: 2,
                   ),
                   pw.SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   pw.Row(
                     children: [
-                      pw.Text('Name :- ${txtName.text}'),
+                      pw.Text('Name :- ${txtName.text} ${txtSurname.text}'),
                     ],
                   ),
                   pw.SizedBox(
@@ -83,19 +91,28 @@ Future<Uint8List> generatePdf() {
                   ),
                   pw.Text(
                       'Description :- A well-written resume job description can offer hiring managers important indications regarding the type of employee you are and the potential value you can bring to an organization.'),
+                  pw.SizedBox(
+                    height: 20,
+                  ),
                   pw.Divider(
                     thickness: 2,
                     endIndent: 2,
                     indent: 2,
                   ),
-                  pw.Text('Contact'),
+                  pw.Text(
+                    'Contact',
+                    style: const pw.TextStyle(
+                      color: PdfColor.fromInt(0xff012D6C),
+                      fontSize: 30,
+                    ),
+                  ),
                   pw.Divider(
                     thickness: 2,
                     endIndent: 2,
                     indent: 2,
                   ),
                   pw.SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   pw.Row(
                     children: [
@@ -105,9 +122,23 @@ Future<Uint8List> generatePdf() {
                   pw.SizedBox(
                     height: 10,
                   ),
+                  pw.Text(
+                    'Address:- ${txtAddress.text}',
+                    style: const pw.TextStyle(
+                      fontSize: 11,
+                    ),
+                  ),
+                  pw.SizedBox(
+                    height: 10,
+                  ),
                   pw.Row(
                     children: [
-                      pw.Text('Email Address:- ${txtEmail.text}'),
+                      pw.Text(
+                        'Email Address:- ${txtEmail.text}',
+                        style: const pw.TextStyle(
+                          fontSize: 11,
+                        ),
+                      ),
                     ],
                   ),
                   pw.SizedBox(
@@ -115,11 +146,29 @@ Future<Uint8List> generatePdf() {
                   ),
                   pw.Row(
                     children: [
-                      pw.Text('Website:- ${txtWebsite.text}'),
+                      pw.Text(
+                        'LinkedIn:- ${txtLinkedIn.text}',
+                        style: const pw.TextStyle(
+                          fontSize: 11,
+                        ),
+                      ),
                     ],
                   ),
                   pw.SizedBox(
                     height: 10,
+                  ),
+                  pw.Row(
+                    children: [
+                      pw.Text(
+                        'Website:- ${txtWebsite.text}',
+                        style: const pw.TextStyle(
+                          fontSize: 11,
+                        ),
+                      ),
+                    ],
+                  ),
+                  pw.SizedBox(
+                    height: 20,
                   ),
                   pw.Divider(
                     thickness: 2,
@@ -138,18 +187,7 @@ Future<Uint8List> generatePdf() {
                   pw.Row(
                     children: [
                       pw.Text(
-                        txtName.text,
-                        style: const pw.TextStyle(
-                          color: PdfColor.fromInt(0xff012D6C),
-                          fontSize: 30,
-                        ),
-                      ),
-                    ],
-                  ),
-                  pw.Row(
-                    children: [
-                      pw.Text(
-                        txtSurname.text,
+                        '${txtName.text} ${txtSurname.text}',
                         style: const pw.TextStyle(
                           color: PdfColor.fromInt(0xff012D6C),
                           fontSize: 30,
@@ -158,7 +196,7 @@ Future<Uint8List> generatePdf() {
                     ],
                   ),
                   pw.SizedBox(
-                    height: 10,
+                    height: 8,
                   ),
                   pw.Divider(
                     thickness: 2,
@@ -166,7 +204,7 @@ Future<Uint8List> generatePdf() {
                     indent: 2,
                   ),
                   pw.SizedBox(
-                    height: 10,
+                    height: 8,
                   ),
                   pw.Row(
                     children: [
@@ -180,7 +218,7 @@ Future<Uint8List> generatePdf() {
                     ],
                   ),
                   pw.SizedBox(
-                    height: 10,
+                    height: 8,
                   ),
                   pw.Divider(
                     thickness: 2,
@@ -188,7 +226,7 @@ Future<Uint8List> generatePdf() {
                     indent: 2,
                   ),
                   pw.SizedBox(
-                    height: 10,
+                    height: 8,
                   ),
                   pw.Row(
                     children: [
@@ -202,7 +240,7 @@ Future<Uint8List> generatePdf() {
                     ],
                   ),
                   pw.SizedBox(
-                    height: 10,
+                    height: 8,
                   ),
                   pw.Row(
                     children: [
@@ -216,7 +254,7 @@ Future<Uint8List> generatePdf() {
                     ],
                   ),
                   pw.SizedBox(
-                    height: 10,
+                    height: 8,
                   ),
                   pw.Row(
                     children: [
@@ -230,7 +268,7 @@ Future<Uint8List> generatePdf() {
                     ],
                   ),
                   pw.SizedBox(
-                    height: 10,
+                    height: 8,
                   ),
                   pw.Row(
                     children: [
@@ -244,7 +282,7 @@ Future<Uint8List> generatePdf() {
                     ],
                   ),
                   pw.SizedBox(
-                    height: 10,
+                    height: 8,
                   ),
                   pw.Row(
                     children: [
@@ -256,8 +294,9 @@ Future<Uint8List> generatePdf() {
                         ),
                       ),
                     ],
-                  ),pw.SizedBox(
-                    height: 10,
+                  ),
+                  pw.SizedBox(
+                    height: 8,
                   ),
                   pw.Row(
                     children: [
@@ -271,7 +310,7 @@ Future<Uint8List> generatePdf() {
                     ],
                   ),
                   pw.SizedBox(
-                    height: 10,
+                    height: 8,
                   ),
                   pw.Divider(
                     thickness: 2,
@@ -279,7 +318,7 @@ Future<Uint8List> generatePdf() {
                     indent: 2,
                   ),
                   pw.SizedBox(
-                    height: 10,
+                    height: 8,
                   ),
                   pw.Row(
                     children: [
@@ -288,6 +327,109 @@ Future<Uint8List> generatePdf() {
                         style: const pw.TextStyle(
                           color: PdfColor.fromInt(0xff012D6C),
                           fontSize: 30,
+                        ),
+                      ),
+                    ],
+                  ),
+                  pw.SizedBox(
+                    height: 8,
+                  ),
+                  pw.Divider(
+                    thickness: 2,
+                    endIndent: 2,
+                    indent: 2,
+                  ),
+                  pw.SizedBox(
+                    height: 8,
+                  ),
+                  pw.Row(
+                    children: [
+                      pw.Text(
+                        'Job Title:- ${txtJobTitle.text}',
+                        style: const pw.TextStyle(
+                          color: PdfColor.fromInt(0xff012D6C),
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                  pw.SizedBox(
+                    height: 8,
+                  ),
+                  pw.Row(
+                    children: [
+                      pw.Text(
+                        'Employee:- ${txtEmployee.text}',
+                        style: const pw.TextStyle(
+                          color: PdfColor.fromInt(0xff012D6C),
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                  pw.SizedBox(
+                    height: 8,
+                  ),
+                  pw.Row(
+                    children: [
+                      pw.Text(
+                        'City:- ${txtCityW.text}',
+                        style: const pw.TextStyle(
+                          color: PdfColor.fromInt(0xff012D6C),
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                  pw.SizedBox(
+                    height: 8,
+                  ),
+                  pw.Row(
+                    children: [
+                      pw.Text(
+                        'City:- ${txtCountryW.text}',
+                        style: const pw.TextStyle(
+                          color: PdfColor.fromInt(0xff012D6C),
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                  pw.SizedBox(
+                    height: 8,
+                  ),
+                  pw.Divider(
+                    thickness: 2,
+                    endIndent: 2,
+                    indent: 2,
+                  ),
+                  pw.Row(
+                    children: [
+                      pw.Text(
+                        'Skills',
+                        style: const pw.TextStyle(
+                          color: PdfColor.fromInt(0xff012D6C),
+                          fontSize: 30,
+                        ),
+                      ),
+                    ],
+                  ),
+                  pw.Divider(
+                    thickness: 2,
+                    endIndent: 2,
+                    indent: 2,
+                  ),
+                  pw.SizedBox(
+                    height: 8,
+                  ),
+                  pw.Row(
+                    children: [
+                      pw.Text(
+                        txtSkills.text,
+                        style: const pw.TextStyle(
+                          color: PdfColor.fromInt(0xff012D6C),
+                          fontSize: 20,
+                          lineSpacing: 3,
                         ),
                       ),
                     ],

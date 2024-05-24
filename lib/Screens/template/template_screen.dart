@@ -55,19 +55,19 @@ class _TemplateScreenState extends State<TemplateScreen> {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    template(height, width),
+                    template(height, width, 'assets/img/template1.png'),
                     const SizedBox(
                       width: 30,
                     ),
-                    template(height, width),
+                    template(height, width, 'assets/img/temp.webp'),
                     const SizedBox(
                       width: 30,
                     ),
-                    template(height, width),
+                    template(height, width, 'assets/img/temp2.webp'),
                     const SizedBox(
                       width: 30,
                     ),
-                    template(height, width),
+                    template(height, width, 'assets/img/temp3.jpg'),
                   ],
                 ),
               ),
@@ -125,14 +125,14 @@ class _TemplateScreenState extends State<TemplateScreen> {
     );
   }
 
-  Container template(double height, double width) {
+  Container template(double height, double width, img) {
     return Container(
-      height: height * .45,
-      width: width * 0.55,
-      decoration: const BoxDecoration(
+      height: height * 0.45,
+      width: width * 0.6,
+      decoration: BoxDecoration(
         color: Colors.white,
         image: DecorationImage(
-          image: AssetImage('assets/img/template1.png'),
+          image: AssetImage(img),
           fit: BoxFit.cover,
         ),
       ),

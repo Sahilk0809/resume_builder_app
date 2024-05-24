@@ -44,12 +44,24 @@ List settingDetails = [
 ];
 
 var txtBirthDate = TextEditingController();
-var txtSchool = TextEditingController();
-var txtLocation = TextEditingController();
-var txtDegree = TextEditingController();
-var txtStudy = TextEditingController();
-var txtStart = TextEditingController();
-var txtEnd = TextEditingController();
+var txtSchool = TextEditingController(text: 'VIS');
+var txtLocation = TextEditingController(text: 'Surat');
+var txtDegree = TextEditingController(text: 'MCA');
+var txtStudy = TextEditingController(text: 'IT');
+var txtStart = TextEditingController(text: '08/09/2019');
+var txtEnd = TextEditingController(text: '06/06/2023');
+var txtName = TextEditingController(text: 'Sahil');
+var txtSurname = TextEditingController(text: 'Kashyap');
+var txtEmail = TextEditingController(text: 'rk4978@gmail.com');
+var txtPass = TextEditingController(text: '0801546');
+var txtContact = TextEditingController(text: '+91 9875642265');
+var txtCity = TextEditingController(text: 'Surat');
+var txtCountry = TextEditingController(text: 'India');
+var txtPincode = TextEditingController(text: '394210');
+var txtLinkedIn = TextEditingController(text: 'Sahil Kashyap');
+var txtWebsite = TextEditingController(text: 'www.rnw.multimedia.edu.in');
+var txtNationality = TextEditingController(text: 'Indian');
+var txtAddress = TextEditingController(text: 'Sai Darshan Soc.,Near Rami Park, Dindoli Surat');
 DateTime? datePicker;
 String birthDate = '';
 

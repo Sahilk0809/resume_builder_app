@@ -83,7 +83,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               ),
               GestureDetector(
                 onTap: () {
-
+                  Navigator.of(context).pushNamed('/template');
                 },
                 child: Container(
                   alignment: Alignment.center,

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:resume_builder_app/utils/colors.dart';
 
+import '../../utils/global.dart';
+
 class ContactInfo extends StatefulWidget {
   const ContactInfo({super.key});
 
@@ -12,17 +14,6 @@ class ContactInfo extends StatefulWidget {
 
 ImagePicker imagePicker = ImagePicker();
 File? fileImage;
-TextEditingController txtName = TextEditingController();
-TextEditingController txtSurname = TextEditingController();
-TextEditingController txtEmail = TextEditingController();
-TextEditingController txtPass = TextEditingController();
-TextEditingController txtContact = TextEditingController();
-TextEditingController txtCity = TextEditingController();
-TextEditingController txtCountry = TextEditingController();
-TextEditingController txtPincode = TextEditingController();
-TextEditingController txtLinkedIn = TextEditingController();
-TextEditingController txtWebsite = TextEditingController();
-TextEditingController txtNationality = TextEditingController();
 
 class _ContactInfoState extends State<ContactInfo> {
   @override
@@ -178,7 +169,6 @@ class _ContactInfoState extends State<ContactInfo> {
               ),
               contactInfoInput(
                 inputType: TextInputType.name,
-                hint: 'First Name',
                 label: 'First Name',
                 controller: txtName,
               ),
@@ -187,7 +177,6 @@ class _ContactInfoState extends State<ContactInfo> {
               ),
               contactInfoInput(
                 inputType: TextInputType.name,
-                hint: 'Last Name',
                 label: 'Last Name',
                 controller: txtSurname,
               ),
@@ -196,7 +185,6 @@ class _ContactInfoState extends State<ContactInfo> {
               ),
               contactInfoInput(
                 inputType: TextInputType.name,
-                hint: 'Email Address(required)',
                 label: 'Email Address(required)',
                 controller: txtEmail,
               ),
@@ -205,16 +193,6 @@ class _ContactInfoState extends State<ContactInfo> {
               ),
               contactInfoInput(
                 inputType: TextInputType.number,
-                hint: 'Password',
-                label: 'Password',
-                controller: txtPass,
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              contactInfoInput(
-                inputType: TextInputType.number,
-                hint: 'Phone Number',
                 label: 'Phone Number',
                 controller: txtContact,
               ),
@@ -222,8 +200,24 @@ class _ContactInfoState extends State<ContactInfo> {
                 height: 10,
               ),
               contactInfoInput(
+                inputType: TextInputType.text,
+                label: 'Address',
+                controller: txtAddress,
+                maxLines: 3,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              contactInfoInput(
+                inputType: TextInputType.number,
+                label: 'Password',
+                controller: txtPass,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              contactInfoInput(
                 inputType: TextInputType.name,
-                hint: 'City',
                 label: 'City',
                 controller: txtCity,
               ),
@@ -232,7 +226,6 @@ class _ContactInfoState extends State<ContactInfo> {
               ),
               contactInfoInput(
                 inputType: TextInputType.name,
-                hint: 'Country',
                 label: 'Country',
                 controller: txtCountry,
               ),
@@ -241,7 +234,6 @@ class _ContactInfoState extends State<ContactInfo> {
               ),
               contactInfoInput(
                 inputType: TextInputType.number,
-                hint: 'Pincode',
                 label: 'Pincode',
                 controller: txtPincode,
               ),
@@ -250,7 +242,6 @@ class _ContactInfoState extends State<ContactInfo> {
               ),
               contactInfoInput(
                 inputType: TextInputType.name,
-                hint: 'LinkedIn(Optional)',
                 label: 'LinkedIn(Optional)',
                 controller: txtLinkedIn,
               ),
@@ -259,7 +250,6 @@ class _ContactInfoState extends State<ContactInfo> {
               ),
               contactInfoInput(
                 inputType: TextInputType.name,
-                hint: 'Website(Optional)',
                 label: 'Website(Optional)',
                 controller: txtWebsite,
               ),
@@ -268,7 +258,6 @@ class _ContactInfoState extends State<ContactInfo> {
               ),
               contactInfoInput(
                 inputType: TextInputType.name,
-                hint: 'Nationality(Optional)',
                 label: 'Nationality(Optional)',
                 controller: txtNationality,
               ),
@@ -280,16 +269,15 @@ class _ContactInfoState extends State<ContactInfo> {
   }
 
   TextFormField contactInfoInput(
-      {required String hint,
-      required String label,
+      {required String label,
       required controller,
-      required inputType}) {
+      required inputType, maxLines}) {
     return TextFormField(
+      maxLines: maxLines,
       controller: controller,
       keyboardType: inputType,
-      cursorColor: Colors.black,
+      cursorColor: Colors.teal,
       decoration: InputDecoration(
-        hintText: hint,
         labelText: label,
         labelStyle: const TextStyle(
           color: Colors.black,

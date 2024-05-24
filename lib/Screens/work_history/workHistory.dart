@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:resume_builder_app/utils/colors.dart';
 import 'package:resume_builder_app/utils/global.dart';
@@ -8,6 +9,11 @@ class WorkHistory extends StatefulWidget {
   @override
   State<WorkHistory> createState() => _WorkHistoryState();
 }
+
+var txtJobTitle = TextEditingController(text: 'Flutter Developer');
+var txtEmployee = TextEditingController(text: 'Yes');
+var txtCityW = TextEditingController(text: 'Surat');
+var txtCountryW = TextEditingController(text: 'India');
 
 GlobalKey<FormState> formKey = GlobalKey();
 
@@ -27,7 +33,6 @@ class _WorkHistoryState extends State<WorkHistory> {
             'Work History',
             style: TextStyle(
               color: blueSelect,
-              fontWeight: FontWeight.w500,
             ),
           ),
         ),
@@ -56,19 +61,19 @@ class _WorkHistoryState extends State<WorkHistory> {
                   const SizedBox(
                     height: 20,
                   ),
-                  workHistoryInput(hintText: 'Job Title'),
+                  workHistoryInput(hintText: 'Job Title', controller: txtJobTitle),
                   const SizedBox(
                     height: 20,
                   ),
-                  workHistoryInput(hintText: 'Employee'),
+                  workHistoryInput(hintText: 'Employee', controller: txtEmployee),
                   const SizedBox(
                     height: 20,
                   ),
-                  workHistoryInput(hintText: 'City'),
+                  workHistoryInput(hintText: 'City', controller: txtCityW),
                   const SizedBox(
                     height: 20,
                   ),
-                  workHistoryInput(hintText: 'Country'),
+                  workHistoryInput(hintText: 'Country', controller: txtCountryW),
                   const SizedBox(
                     height: 20,
                   ),
@@ -145,9 +150,10 @@ class _WorkHistoryState extends State<WorkHistory> {
     );
   }
 
-  TextFormField workHistoryInput({required String hintText}) {
+  TextFormField workHistoryInput({required String hintText, required TextEditingController controller}) {
     return TextFormField(
       cursorColor: Colors.teal,
+      controller: controller,
       decoration: InputDecoration(
         enabledBorder: UnderlineInputBorder(
           borderSide: BorderSide(

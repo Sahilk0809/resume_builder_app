@@ -8,6 +8,8 @@ class SkillScreen extends StatefulWidget {
   State<SkillScreen> createState() => _SkillScreenState();
 }
 
+var txtSkills = TextEditingController(text: 'C language');
+
 class _SkillScreenState extends State<SkillScreen> {
   @override
   Widget build(BuildContext context) {
@@ -65,6 +67,7 @@ class _SkillScreenState extends State<SkillScreen> {
                   height: 200,
                   width: 400,
                   child: TextFormField(
+                    controller: txtSkills,
                     cursorColor: Colors.teal,
                     maxLines: 10,
                     decoration: const InputDecoration(
