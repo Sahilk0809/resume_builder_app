@@ -13,6 +13,7 @@
   <img src="https://github.com/Sahilk0809/resume_builder_app/assets/149374235/326806d0-4433-497a-a34d-fe58b8bbd1e3" height=65% width=22%>
   <img src="https://github.com/Sahilk0809/resume_builder_app/assets/149374235/0a43605e-eba2-4b15-928f-c5c40366d1be" height=65% width=22%>
   <img src="https://github.com/Sahilk0809/resume_builder_app/assets/149374235/cfcc16f0-8128-48ed-9e5e-1ed245903ff9" height=65% width=22%>
+  <video src="https://github.com/Sahilk0809/resume_builder_app/assets/149374235/92ffec6b-42cc-425c-87d1-db2fe2402e54">
 </div>
 
-https://github.com/Sahilk0809/resume_builder_app/assets/149374235/92ffec6b-42cc-425c-87d1-db2fe2402e54
+
