@@ -95,7 +95,7 @@ class _EducationScreenState extends State<EducationScreen> {
                   children: [
                     educationInput(
                       controller: txtSchool,
-                      hintText: 'School Name',
+                      hintText: 'School/University',
                       suffixIcon: const Icon(Icons.search),
                     ),
                     SizedBox(
